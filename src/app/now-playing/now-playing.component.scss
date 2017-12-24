@@ -1,0 +1,26 @@
+@import '~scss/variables.scss';
+
+a {
+    cursor: pointer;
+    display: inline-block;
+    flex-grow: 1;
+    &:hover {
+        background-color: $background-color-hover;
+    }
+}
+::ng-deep .meta {
+    font-size: 10px;
+}
+div {
+    border: $border;
+    background-color: $background-color-playing;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    display: inline-block;
+    width: 260px;
+    margin: rowheight(1) 30px;
+    padding: rowheight(1) 0;
+}

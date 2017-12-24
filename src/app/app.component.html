@@ -1,0 +1,22 @@
+<div class="pageControl">
+    <a (click)="moveLeft()" class="slider" [class.disabled]="pageView < 1"><</a>
+    <a (click)="moveRight()" class="slider" [class.disabled]="pageView > maxRight">></a>
+</div>
+<div class="view" [style.transform]="'translateX(-'+pageView+'vw)'">
+    <div>
+        <div>current folder: {{mpdData.currentFolder}}</div>
+        <ul>
+            <li *ngIf="mpdData.currentFolder !== '/'" (click)="selectParent()">..</li>
+            <ng-container *ngFor="let item of mpdData.folderList">
+                <li *ngIf="item.directory"><folder [item]="item"></folder></li>
+                <li *ngIf="item.file"><file [item]="item"></file></li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div style="text-align:center">
+        <div>connected: {{mpdData.connected}}</div>
+        <now-playing></now-playing>
+        <playlist></playlist>
+    </div>
+</div>

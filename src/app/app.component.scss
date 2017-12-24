@@ -1,0 +1,24 @@
+.view {
+    display: flex;
+    width: 270vw;
+    transition: transform 500ms ease;
+
+    &>* {
+        width: 90vw;
+    }
+}
+.pageControl {
+    display: flex;
+    justify-content: space-between;
+}
+.slider {
+    cursor: pointer;
+    display: block;
+    background-color: #F3F3F3;
+    text-align: center;
+    width: 98%;
+    padding: 10px 0;
+    &:hover {
+        background-color: #EEE;
+    }
+}

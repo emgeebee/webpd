@@ -1,0 +1,11 @@
+$background-color: #CCC;
+$background-color-hover: #CCE;
+$background-color-playing: #ECC;
+
+$border: 1px solid green;
+
+$font-family: arial;
+
+@function rowheight($val) {
+    @return $val * 4px;
+}

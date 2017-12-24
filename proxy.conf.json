@@ -1,0 +1,15 @@
+{
+    "/komponist/info": {
+        "target": "http://127.0.0.1:9000/komponist/info",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/komponist": {
+        "target": "ws://127.0.0.1:9000/komponist",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "ws": true
+    }
+}
