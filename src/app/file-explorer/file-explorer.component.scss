@@ -1,5 +1,10 @@
 @import '~scss/variables.scss';
 
+div {
+    padding: rowheight(1) 10px rowheight(3);
+    font-family: $font-family;
+}
+
 .list {
     list-style: none;
     padding: 0;
@@ -13,9 +18,8 @@ li {
 }
 
 a {
-    padding: rowheight(1) 10px;
-    background-color: $background-color;
     display: block;
+    padding: rowheight(1) 10px;
     cursor: pointer;
     &:hover {
         background-color: $background-color-hover;
@@ -23,10 +27,4 @@ a {
     .now-playing & {
         background-color: $background-color-playing;
     }
-}
-::ng-deep .meta, .filepath {
-    font-size: 10px;
-}
-.actions {
-    margin-top: rowheight(2);
 }

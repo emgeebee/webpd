@@ -3,9 +3,9 @@ import { Store } from '@ngrx/store';
 import { PLAY_FOLDER, ADD_FOLDER } from "../mpd/reducer";
 
 @Component({
-  selector: 'file',
-  templateUrl: './file.component.html',
-  styleUrls: ['./file.component.css']
+    selector: 'file',
+    templateUrl: './file.component.html',
+    styleUrls: ['./file.component.scss']
 })
 export class FileComponent {
 

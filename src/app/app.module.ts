@@ -15,6 +15,11 @@ import { FileComponent } from './file/file.component';
 import { NowPlayingComponent } from './now-playing/now-playing.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { TrackNamePipe } from './track-name.pipe';
+import { IconComponent } from './icon/icon.component';
+import { ControlsComponent } from './controls/controls.component';
+import { StateComponent } from './state/state.component';
+import { NowPlayingDetailComponent } from './now-playing-detail/now-playing-detail.component';
+import { FileExplorerComponent } from './file-explorer/file-explorer.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +28,12 @@ import { TrackNamePipe } from './track-name.pipe';
         FileComponent,
         NowPlayingComponent,
         PlaylistComponent,
-        TrackNamePipe
+        TrackNamePipe,
+        IconComponent,
+        ControlsComponent,
+        StateComponent,
+        NowPlayingDetailComponent,
+        FileExplorerComponent
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,13 @@
+@import '~scss/variables.scss';
+
+:host {
+    display: block;
+    padding: rowheight(1) 10px;
+    cursor: pointer;
+    &:hover {
+        background-color: $background-color-hover;
+    }
+    .now-playing & {
+        background-color: $background-color-playing;
+    }
+}

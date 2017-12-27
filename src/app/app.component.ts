@@ -13,7 +13,7 @@ import { mpd, state, SELECT_FOLDER, GET_PLAYLIST } from "./mpd/reducer";
 export class AppComponent {
 
     public pageView = 0;
-    public maxRight = 200;
+    public offset = 0;
     public mpdData: state;
     constructor(komponist: KomponistService, private utils: UtilsService, private _store: Store<any>) {
         this._store
@@ -23,22 +23,12 @@ export class AppComponent {
         });
     }
 
-    public selectParent(): void {
-        this._store.dispatch({ type: SELECT_FOLDER, payload: ".."})
-    }
-
-    public moveLeft(): void {
-        if (this.pageView < 1) {
+    public moveTo(target: number): void {
+        if (this.pageView === target) {
             return;
         }
-        this.pageView -= 85;
-    }
-
-    public moveRight(): void {
-        if (this.pageView > this.maxRight) {
-            return;
-        }
-        this.pageView += 85;
+        this.offset = 85 * target;
+        this.pageView = target;
     }
 
 }

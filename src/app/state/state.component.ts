@@ -4,14 +4,14 @@ import { Store } from '@ngrx/store';
 import { state } from "../mpd/reducer";
 
 @Component({
-  selector: 'now-playing',
-  templateUrl: './now-playing.component.html',
-  styleUrls: ['./now-playing.component.scss']
+  selector: 'state',
+  templateUrl: './state.component.html',
+  styleUrls: ['./state.component.css']
 })
-export class NowPlayingComponent {
+export class StateComponent {
 
     public mpdData: state;
-    constructor(private _store: Store<any> ) {
+    constructor(private _store: Store<any>) {
         this._store
         .select('mpd')
         .subscribe(state => {

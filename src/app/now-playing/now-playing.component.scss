@@ -1,5 +1,8 @@
 @import '~scss/variables.scss';
 
+:host {
+    margin: 0 20px;
+}
 a {
     cursor: pointer;
     display: inline-block;
@@ -23,4 +26,5 @@ div {
     width: 260px;
     margin: rowheight(1) 30px;
     padding: rowheight(1) 0;
+    text-align: center;
 }

@@ -5,7 +5,7 @@ import { SELECT_FOLDER, PLAY_FOLDER, ADD_FOLDER } from "../mpd/reducer";
 @Component({
   selector: 'folder',
   templateUrl: './folder.component.html',
-  styleUrls: ['./folder.component.css']
+  styleUrls: ['./folder.component.scss']
 })
 export class FolderComponent {
 
