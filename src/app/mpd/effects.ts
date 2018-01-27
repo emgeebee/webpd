@@ -36,6 +36,12 @@ export class MpdEffects {
         this.komponist.play(action.payload);
     });
 
+    @Effect({ dispatch: false }) pause$ = this.actions$
+    .ofType('PAUSE')
+    .do((action: any) => {
+        this.komponist.pause();
+    });
+
     @Effect({ dispatch: false }) add$ = this.actions$
     .ofType('ADD_FOLDER')
     .do((action: any) => {
@@ -58,6 +64,12 @@ export class MpdEffects {
     .ofType('FIND')
     .do((action: any) => {
         this.komponist.find(action.payload.type, action.payload.what);
+    });
+
+    @Effect({ dispatch: false }) rescan= this.actions$
+    .ofType('RESCAN')
+    .do((action: any) => {
+        this.komponist.rescan();
     });
 
     @Effect({ dispatch: false }) skip$ = this.actions$

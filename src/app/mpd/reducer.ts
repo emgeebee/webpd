@@ -4,9 +4,11 @@ import * as path from 'path';
 
 export const LOAD_FOLDER = 'LOAD_FOLDER';
 export const CONNECTED = 'CONNECTED';
+export const RESCAN = 'RESCAN';
 export const SELECT_FOLDER = 'SELECT_FOLDER';
 export const PLAY_FOLDER = 'PLAY_FOLDER';
 export const PLAY = 'PLAY';
+export const PAUSE = 'PAUSE';
 export const ADD_FOLDER = 'ADD_FOLDER';
 export const GET_PLAYLIST = 'GET_PLAYLIST';
 export const UPDATE_PLAYLIST = 'UPDATE_PLAYLIST';
@@ -20,7 +22,9 @@ const defaultState = {
     currentFolder: "/",
     folderList: [],
     nowPlaying: "",
+    percentPlayed: 0,
     playlist: [],
+    rescanInProgress: false,
     state: {}
 }
 
@@ -29,7 +33,9 @@ export interface state {
     currentFolder: string;
     folderList: string[];
     nowPlaying: string;
+    percentPlayed: number;
     playlist: any[];
+    rescanInProgress: boolean;
     state: any;
 }
 
@@ -41,6 +47,10 @@ export function mpd(state: state = defaultState, action: any) {
 
 		case CONNECTED:
 			state.connected = true;
+            return state;
+
+		case RESCAN:
+			state.rescanInProgress = true;
             return state;
 
 		case SELECT_FOLDER:
@@ -58,6 +68,8 @@ export function mpd(state: state = defaultState, action: any) {
                 nowPlaying.nowPlaying = true;
                 state.nowPlaying = nowPlaying;
             }
+            state.percentPlayed = (state.state.elapsed / state.state.duration) * 100;
+
             return state;
 
 		default:

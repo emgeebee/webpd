@@ -19,4 +19,8 @@ export class StateComponent {
         });
     }
 
+    public rescan() {
+        this._store.dispatch({ type: 'RESCAN' })
+    }
+
 }

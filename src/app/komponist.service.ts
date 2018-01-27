@@ -13,6 +13,7 @@ export class KomponistService {
 
     constructor(private store$: Store<any>) {
         komponistInit(this.start.bind(this));
+        setInterval(() => this.getStatus(), 1000);
     }
 
     start(err, komponist) {
@@ -33,10 +34,18 @@ export class KomponistService {
         this.playlistinfo();
     }
 
+    public rescan() {
+        this.komponist$.update();
+    }
+
     public play(id: string) {
         this.komponist$.play(id, (err, list) => {
             this.playlistinfo();
         })
+    }
+
+    public pause() {
+        this.komponist$.toggle(1);
     }
 
     playFolder(folder) {

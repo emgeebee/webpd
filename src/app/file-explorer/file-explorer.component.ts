@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { state } from "../mpd/reducer";
 
 @Component({
   selector: 'file-explorer',
@@ -15,9 +16,10 @@ export class FileExplorerComponent {
         .subscribe(state => {
             this.mpdData = state;
         });
+    }
 
     public selectParent(): void {
-        this._store.dispatch({ type: SELECT_FOLDER, payload: ".."})
+        this._store.dispatch({ type: 'SELECT_FOLDER', payload: '..' })
     }
 
 
